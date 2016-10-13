@@ -2,27 +2,28 @@
 
 Code information of the apk:
 ```python
- python AppInfo.py youDir
+ python AppInfo.py ApkPath
 ```
 
 Features information of the apk:
 ```python
- python FeatureInfo.py  youDir
+ python FeatureInfo.py  ApkPath
 ```
 
 Train and Predict the apk:
 ```python
- python FeatureInfo.py ApKDir
+ python FeatureInfo.py ApKPath
 ```
 Statistics of the apk:
 ```python
-python 
+python Dir_With_APKs
 ```
 
 Machine Learning info:
 ```python 
 python GetMLPara.py
 ```
+
 ##Dependences:
 
 [Sklearn](http://scikit-learn.org/stable/)
