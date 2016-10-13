@@ -1,0 +1,416 @@
+#some codes can be used for future testing 
+
+
+
+if __name__ == "__main__":
+   """
+   f1 = "/home/almohri/Downloads/Apps/Malicious Apps/Geinimi--ba63270f2ba3dfbafab545233a46274dacddacf5.apk"
+   """
+   _PATH1 = '/home/almohri/Downloads/Apps/Download from Google Play'
+   _PATH33 = '/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Malware_NCSU'
+   _PATH_benign ='/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps'
+   _Exceptist = ['/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps/PRODUCTIVITY--com.latedroid.juicedefender.apk',
+                 '/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps/mominis.Generic_Android.Starfall.apk', 
+                 '/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps/PHOTOGRAPHY--com.zecurisoft.mhc1202.apk']
+   
+   new_app =newStart(_PP)
+   for j in new_app._permissionDic.keys():
+       print j
+       #print new_app._permissionDic[j]
+       path = None
+       path = []
+       path=dfs_recursive_search(new_app._Callinout.fcgnx, j, path)
+       list1 = None
+       list1 = []
+       deep =dfs_search(new_app._Callinout.fcgnx, j, list1)   
+       print "{0} {1} {2}".format(deep,len(path),path)
+   del new_app  
+   print "\n"
+   if len(x) > 10: 
+          xlabel1 = 'High_free_popular'
+          histogram_plot(x,xlabel1)
+
+	        
+   #get_app_list()
+   x = []
+   files = get_filepaths(_PATH_benign)
+   #files = sorted(files, key=str.lower)
+   files1 =files[0:100] 
+   #print files_2
+   raw_input()
+   i = 1
+   #files.sort()
+   #file = open('zz_number.txt','a')
+   f1 = open('Z_num.txt','a')
+   f2 = open('Z_size.txt','a')
+   f3 = open('Z_num1.txt','a')
+   f4 = open('Z_num2.txt','a')
+   f5 = open('Z_permission','a')
+   for f in files1:
+       print i
+       i = i + 1
+       if f in _Exceptist:
+            continue
+       print "{0}".format(f)
+       new_app = None
+       new_app = newStart(f)
+       bf = build_features(new_app._Callinout.fcgnx_class_level)
+       bf.class_level_features(new_app._Callinout.fcgnx_class_level,f1,f2,f3,f4)
+       #bf.permission_features(new_app.num_of_permission,f5)
+       """
+       print "APIs:"
+       for j in new_app._permissionDic.keys():
+           path = None
+           path = []
+           path=dfs_recursive_search(new_app._Callinout.fcgnx, j, path) 
+           x.append(len(path))
+           #print len(path)
+           file.write("%d " % len(path))
+           print "{0} {1}".format(len(path),path)
+       del new_app
+       if len(x) > 10:
+          raw_input("system pause")  
+       """
+       print "\n" 
+   file.close
+   f1.close
+   f2.close
+   f3.close
+   f4.close
+   f5.close
+l1.append(bf.vector_subgraph[0])
+       l2.append(bf.vector_subgraph[1]) 
+       fx2.write("%f" % bf.vector_subgraph[1] )  
+       #write_list_into_files(bf.vector_subgraph, fx2)
+"""
+          permissionDict = self.CL.get_permission()
+	  #output the permissions
+          self._permissionDic = {}
+
+          #for i,j in  permissionDict.iteritems():
+          #    print "{0}:{1}".format(i,j)
+          
+          for permission in permissionDict.keys():
+              APILocationList = permissionDict[permission]
+              for api in APILocationList:
+                  li = api.split("  --->  ")
+                  API_full_name = li[1]
+                  api_n = API_full_name.split(" ")
+                  API_name = api_n[0] + " " +api_n[1]
+                  if API_name not in self._permissionDic:
+                     self._permissionDic[API_name] = []
+                  
+                  method_full_name = li[0]
+                  method_n = method_full_name.split(" ")
+                  method_name = method_n[0] + " " +method_n[1]
+                  self._permissionDic[API_name].append(method_name)
+                  
+                  #print "{0} : {1}".format(API_name,method_name)
+          """
+
+     # this part is building the graph with all the functions
+      """
+          def build_fcg_nx(self):
+          Using NX and Androguard, build a directed graph NX object so that:
+              - node names are method names as: class name, method name and descriptor
+              - each node has a label that encodes the method behavior
+                   
+          fcgnx = nx.DiGraph()      
+          for node_name in self._Callinout.invokeDir2.keys():
+              fcgnx.add_node(node_name)
+             
+          for node_name, node_values in self._Callinout.invokeDir2.iteritems():
+              children = self._Callinout.invokeDir2[node_name]
+              fcgnx.add_edges_from([(node_name, child) for child in children])
+          U_fcgnx = fcgnx.to_undirected()
+          num = nx.number_connected_components(U_fcgnx)
+          print num
+          
+
+	  try:
+             nx.draw(U_fcgnx)
+             plt.show()
+
+          except IOError:  
+             print "not include package"  
+          
+          return fcgnx
+      """
+
+"/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps/COMMUNICATION--com.foxfi.apk"
+
+
+class build_features :
+    vector_subgraph = None
+    vector_api_length = None
+    vector_user = None
+    permissionNum = None
+
+    def __init__(self,fcgnx_class_level,fcgnx,num_of_permission):
+        self.permission_features(num_of_permission)
+        self.api_length(fcgnx)
+        self.user_action_feature(fcgnx )
+        #self.subgraph_features(fcgnx_class_level,fcgnx)
+        #print "tianke"
+        #print self.vector_api_length
+        #print new_app._permissionDic
+        #print len(self.vector_api_length)
+        pass
+    
+    def permission_features(self, permission_num):
+        #f = open('z_permission_num.txt', 'a')
+        #f.write("%d " % permission_num)
+        self.permissionNum = permission_num
+        #print permission_num
+    
+    def api_length(self,fcgnx):
+        self.vector_api_length = [0]*len(karim_api_list)
+        for j in  karim_api_list:            
+            if fcgnx.has_node(j):     
+               path = None
+               path = []
+               path = dfs_recursive_search(fcgnx, j, path)
+               pos =  karim_api_list.index(j)
+               self.vector_api_length[pos] = len(path)             
+    
+    def user_action_feature(self, fcgnx): 
+        self.vector_user= [0]*len(user_action_list)
+        for j in fcgnx.nodes():
+            function_name = find_function_name(j)
+            print function_name
+            if function_name in user_action_list:
+               pos =  user_action_list.index(function_name)
+               self.vector_user[pos] = self.vector_user[pos] + 1
+        sum1 = sum(self.vector_user)
+        self.vector_user.append(sum1)
+
+    def subgraph_features(self, fcgnx_class_level, fcgnx):
+        self.vector_subgraph = []
+        #num- # of nodes, size - # of edges 
+        num = fcgnx_class_level.number_of_nodes()
+        size = fcgnx_class_level.size()
+        UG1 = fcgnx_class_level.to_undirected(reciprocal=False)  
+        num1 = nx.number_connected_components(UG1) 
+        nodelist = nx.connected_components(UG1)
+        # we can manually choose the threshold 
+        threshold = 5
+        for i in nodelist :
+    	    if len(i) < threshold :     	 		        
+                UG1.remove_nodes_from(i)
+            else :
+                continue
+        num2 = nx.number_connected_components(UG1)
+        nodelist = nx.connected_components(UG1)
+        #print num2
+        self.vector_subgraph.append(num2)
+        temp_list = [0]*num2
+        for i in permissionDic:
+            list2 = _invoke_where( i, fcgnx, nodelist, num2)
+            temp_list = list(np.array(list2) + np.array(temp_list))
+        #print temp_list 
+        sum1 = sum(temp_list)
+        if sum1 > 0 :
+           temp1_list = [ t/(sum1+0.0) for t in temp_list] 
+           std = np.std(temp1_list)
+        else:
+           std = 0.0   
+        self.vector_subgraph.append(std)
+        
+# we can manually choose the threshold 
+        threshold = 5
+        for i in nodelist :
+    	    if len(i) < threshold :     	 		        
+                UG1.remove_nodes_from(i)
+            else :
+                continue
+        num2 = nx.number_connected_components(UG1)
+        nodelist = nx.connected_components(UG1)
+        #print num2
+        self.vector_subgraph.append(num2)
+
+
+    """
+    cm = confusion_matrix(y_test,y_pred)
+    plt.matshow(cm)
+    plt.title('confusion-matrix')
+    plt.colorbar()
+    plt.ylabel('True label')
+    plt.xlabel('predictable label')
+    plt.show()              
+    """
+
+# nx graph property
+# input nx digraph
+# output graph propoerties
+def average_degree(fcgnx):
+    nodes_n = fcgnx.number_of_nodes()
+    edges_n = fcgnx.size()
+    degree_centrality = float(edges_n/(nodes_n + 0.0))
+    return nodes_n,degree_centrality
+
+#find which class subgraph invoke the method
+#it will output something like [2,0,4,5] 
+def _invoke_where(method_name, fcgnx , class_nodelist, num2):
+    list1 = [0] * num2
+    invoking_method_list = []
+    for node in fcgnx.nodes():
+        if fcgnx.has_edge(node,method_name):
+           invoking_method_list.append(node) 
+    
+    for node in invoking_method_list:
+        class_name = find_class_name(node)
+        for i in range(0,num2,1):
+            if class_name in class_nodelist[i]:
+               list1[i] = 1 
+    del invoking_method_list
+    return list1
+
+
+def dfs_search(fcgnx, destination, listnode ):
+    flag = 0
+    dep1 = 1
+    listnode.append(destination)
+    for node in fcgnx.nodes():
+        if fcgnx.has_edge(node,destination) and node not in listnode:
+           listnode1 = listnode
+           listnode1.append(node)
+           flag = 1
+           dep = dfs_search(fcgnx, node, listnode1) + 1
+           #print "{0}  -->  {1}".format(node,destination)
+           if dep >  dep1:
+              dep1 = dep     
+    if flag == 0 :     
+       dep1 = 1   
+       #print "source node {0}".format(destination)
+    else:
+       pass
+    depth = dep1
+    return depth 
+
+def dfs_recursive_search(fcgnx, destination, path=[]):
+    path = path + [destination]
+    path_o = path
+    path_u = path 
+    for node in fcgnx.nodes():
+        if fcgnx.has_edge(node,destination) and node not in path:
+           path = dfs_recursive_search(fcgnx, node, path_o) 
+           if len(path) > len(path_u):
+              path_u = path     
+    return path_u
+
+
+
+def split_graphs(new_nodelist, original_fcgnx_class_level, original_fcgnx):
+    
+    t = len(new_nodelist)
+    sum_nodes = sum( len(i) for i in new_nodelist ) 
+    #print new_nodelist 
+    dic_v = {}
+    i = 0
+    for node_list_part in new_nodelist:
+        temp = node_list_part                                                                                                                 
+        G_class = nx.DiGraph()
+        G_method = nx.DiGraph()
+        G_class.add_nodes_from(temp)
+        # output 2 item tuple
+        # for building a new class level graph  
+        for e in original_fcgnx_class_level.edges_iter(data = False):
+            node1 = e[0] 
+            node2 = e[1]
+            if node1 in temp and node2 in temp :
+               G_class.add_edge(node1, node2)
+        # print G_class.number_of_nodes()
+        # for building a new method level graph
+        for e1 in original_fcgnx.edges_iter(data = False): 
+            node1 = e1[0]      
+            node2 = e1[1]
+            class_name = find_class_name(node1)
+            if class_name in temp:
+               G_method.add_edge(node1, node2)
+        #*e =(node1, node2) 
+        bfes = build_features_each_subgraph(G_class,G_method)
+        del G_class,G_method
+        v1  =  bfes.vector_total
+        percent = float(v1[-2]/(sum_nodes + 0.0))
+        v1[-1] = percent
+        del bfes
+        dic_v[i] = v1
+        i = i + 1 
+    return dic_v 
+
+#both fcgnx and fcgnx_class_level are networkx DiGraph objects
+#this time 
+class build_features_each_subgraph:
+
+    vector_size_subgraph = None
+    vector_api_length = None
+    vector_user = None
+    permissionNum = None
+    vector_total = None
+
+    def __init__(self,fcgnx_class_level,fcgnx):
+        #self.permission_features(num_of_permission)
+        self.api_length(fcgnx)
+        self.user_action_feature(fcgnx)
+        self.subgraph_size_feature(fcgnx,fcgnx_class_level)
+        self.combine_all()
+        #self.subgraph_features(fcgnx_class_level,fcgnx)
+        pass
+    
+    #def permission_features(self, permission_num):
+        #f = open('z_permission_num.txt', 'a')
+        #f.write("%d " % permission_num)
+        #self.permissionNum = permission_num
+    
+    def api_length(self,fcgnx):
+        self.vector_api_length = [0]*len(karim_api_list)
+        for j in  karim_api_list:            
+            if fcgnx.has_node(j):     
+               path = None
+               path = []
+               path = dfs_recursive_search(fcgnx, j, path)
+               pos =  karim_api_list.index(j)
+               self.vector_api_length[pos] = len(path)             
+    
+    def user_action_feature(self, fcgnx): 
+        self.vector_user= [0]*len(user_action_list)
+        for j in fcgnx.nodes():
+            function_name = find_function_name(j)
+            #print function_name
+            if function_name in user_action_list:
+               pos =  user_action_list.index(function_name)
+               self.vector_user[pos] = self.vector_user[pos] + 1
+        sum1 = sum(self.vector_user)
+        self.vector_user.append(sum1)
+        #print self.vector_user
+   
+    #four parts; node_size,  di-average-degree, un-di-average-gegree ,percent 
+    def subgraph_size_feature(self, fcgnx, fcgnx_class_level):
+        #self.vector_size_subgraph = [0]*3
+        di_edge_size = fcgnx_class_level.size()
+        node_size = fcgnx_class_level.number_of_nodes()
+        UG1 = fcgnx_class_level.to_undirected(reciprocal=False)
+        undi_edge_size = len(UG1.edges())
+        del UG1 
+        di_degree_average = float(di_edge_size/ (node_size+0.0))
+        undi_degree_average = float(undi_edge_size/ (node_size+0.0))
+        self.vector_size_subgraph =[ di_degree_average , undi_degree_average, node_size, 0]
+
+
+    def combine_all(self):
+        self.vector_total = self.vector_api_length + self.vector_user + self.vector_size_subgraph
+         
+#distibution/dis is a list of results to represent the distribution 
+def histogram_plot(x,xlabel):
+    bins = len(set(x)) + 1
+    n,bin_num,patches = plt.hist(x, bins)
+    plt.xlabel(xlabel)
+    plt.ylabel('number')
+    plt.title('the distribution for longest paths')
+    #plt.axis([0,bins,0,10])
+    plt.grid(True)
+    plt.show() 
+
+/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps/ru.nsu.ccfit.zuev.osu.apk
+/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Free_High_Popular_Apps/PRODUCTIVITY--com.lastpass.lpandroid.apk
+/home/almohri/Desktop/SVN_Benign/UI_Android_Analysis/Malware_Apps_NCSU_all/DroidKungFu3--1162b7cde5e0797701c8d1371e3bfb135410b6f8.apk
