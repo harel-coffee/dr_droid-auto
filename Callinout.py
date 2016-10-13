@@ -1,6 +1,5 @@
 """
-Ke add this part for buildign the method level graph 
-July/7/2014
+buildign the method level graph 
 
 Then we need to analyze the permissions and structures
 both method level and class level
