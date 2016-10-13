@@ -9,7 +9,7 @@ import sys
 import pydot
 import numpy as np
 import decimal 
-#import pygraphviz as pgv
+import pygraphviz as pgv
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab 

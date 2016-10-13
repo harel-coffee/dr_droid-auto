@@ -1,0 +1,41 @@
+digraph G {
+	edge [style=solid,
+		weight=0
+	];
+	"Lorg/me/androidapplication1/R$string;"	 [style=filled];
+	"Lorg/media/player/MoviePlayer;"	 [style=filled];
+	"Lorg/media/player/MoviePlayer;" -> "Lorg/media/player/MoviePlayer;"	 [label=2,
+		weight=2];
+	"Lorg/media/player/DataHelper;"	 [style=filled];
+	"Lorg/media/player/MoviePlayer;" -> "Lorg/media/player/DataHelper;"	 [label=4,
+		weight=4];
+	"Lorg/media/player/R$drawable;"	 [style=filled];
+	"Lorg/media/player/R$attr;"	 [style=filled];
+	"Lorg/me/androidapplication1/R$drawable;"	 [style=filled];
+	"Lorg/me/androidapplication1/R;"	 [style=filled];
+	"Lorg/me/androidapplication1/DataHelper;"	 [style=filled];
+	"Lorg/me/androidapplication1/DataHelper$OpenHelper;"	 [style=filled];
+	"Lorg/me/androidapplication1/DataHelper;" -> "Lorg/me/androidapplication1/DataHelper$OpenHelper;"	 [label=3,
+		weight=3];
+	"Lorg/media/player/R$string;"	 [style=filled];
+	"Lorg/media/player/R$layout;"	 [style=filled];
+	"Lorg/media/player/R;"	 [style=filled];
+	"Lorg/me/androidapplication1/R$layout;"	 [style=filled];
+	"Lorg/media/player/DataHelper$OpenHelper;"	 [style=filled];
+	"Lorg/media/player/DataHelper$OpenHelper;" -> "Lorg/media/player/DataHelper$OpenHelper;"	 [label=1,
+		weight=1];
+	"Lorg/media/player/DataHelper$OpenHelper;" -> "Lorg/media/player/DataHelper;"	 [label=1,
+		weight=1];
+	"Lorg/media/player/DataHelper;" -> "Lorg/media/player/DataHelper$OpenHelper;"	 [label=3,
+		weight=3];
+	"Lorg/me/androidapplication1/DataHelper$OpenHelper;" -> "Lorg/me/androidapplication1/DataHelper;"	 [label=1,
+		weight=1];
+	"Lorg/me/androidapplication1/DataHelper$OpenHelper;" -> "Lorg/me/androidapplication1/DataHelper$OpenHelper;"	 [label=1,
+		weight=1];
+	"Lorg/me/androidapplication1/MoviePlayer;"	 [style=filled];
+	"Lorg/me/androidapplication1/MoviePlayer;" -> "Lorg/me/androidapplication1/DataHelper;"	 [label=4,
+		weight=4];
+	"Lorg/me/androidapplication1/MoviePlayer;" -> "Lorg/me/androidapplication1/MoviePlayer;"	 [label=2,
+		weight=2];
+	"Lorg/me/androidapplication1/R$attr;"	 [style=filled];
+}

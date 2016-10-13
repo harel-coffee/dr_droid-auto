@@ -38,7 +38,7 @@ from Callinout import *
 
 #graphs
 import networkx as nx
-#import pygraphviz as pgv
+import pygraphviz as pgv
 
 ##
 # all in android.core.analysis.analysis.py  

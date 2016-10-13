@@ -11,7 +11,7 @@ import copy
 import sys
 import pydot
 import networkx as nx
-#import pygraphviz as pgv
+import pygraphviz as pgv
 
 class YY_CallInOut:    
     invokeDir2 = None    # invokeDir2:{the invoking method ---> the invoked method}
