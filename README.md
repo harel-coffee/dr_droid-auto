@@ -12,7 +12,7 @@ Code information of the apk: print the code structure of the app, generate dot g
 ```
 Features information of the apk:print the feature information of the app
 ```python
- python FeatureInfo.py  ApkPath
+ python FeatureInfo.py ApkPath
 ```
 
 Train and Predict the apk: train based on existing dataset and predict a new apk.
