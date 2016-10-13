@@ -1,10 +1,11 @@
-#A Simple Static Android Analyzing Tool with Graph Analysis and Machine Learning
+# A Simple Static Android Analyzing Tool with Graph Analysis and Machine Learning
 
-##Description
+## Description
 The tool builds a dependence graph of an app and partitions it into different regions based on the graph connection.
 Each region is independently classified via machine learning algorithms. The tool provides more insight code structure information than conventional whole-program-based machine learning.
 
 
+## How to run
 Code information of the apk: print the code structure of the app, generate dot graphs for analyzing. 
 ```python
  python AppInfo.py ApkPath
@@ -27,7 +28,7 @@ Machine Learning info: show how we choose a machine learning algorithm based on 
 python GetMLPara.py
 ```
 
-##Dependences:
+## Dependences:
 
 [Sklearn](http://scikit-learn.org/stable/), [NetworkX](https://networkx.github.io/),
 [Androguard](https://github.com/androguard), [Androwarn](https://github.com/maaaaz/androwarn)
