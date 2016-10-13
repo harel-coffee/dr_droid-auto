@@ -1,6 +1,25 @@
-# dr_droid.github.io
-The public open source for DR-Droid paper. 
+#Test your app
 
-The project is still under the constrcution. 
+Code information of the apk:
+```python
+ python AppInfo.py youDir
+```
 
-We will release the MD5 of app dataset and other experimental results after the paper gets pubilished.
+Features information of the apk:
+```python
+ python FeatureInfo.py  youDir
+```
+
+Train and Predict the apk:
+```python
+ python FeatureInfo.py ApKDir
+```
+Statistics of the apk:
+```python
+python 
+```
+
+Machine Learning info:
+```python 
+python GetMLPara.py
+```
