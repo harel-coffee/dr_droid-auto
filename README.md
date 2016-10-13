@@ -1,4 +1,4 @@
-# A Simple Static Android Analyzing Tool with Graph Analysis and Machine Learning
+# A Static Android Analyzing Tool with Graph Analysis and Machine Learning
 
 ## Description
 The tool builds a dependence graph of an app and partitions it into different regions based on the graph connection.
