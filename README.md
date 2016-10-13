@@ -1,4 +1,4 @@
-#Test your app
+#A Static Android Analyzing Tool with Graph Analysis and Machine Learning
 
 Code information of the apk:
 ```python
@@ -23,3 +23,12 @@ Machine Learning info:
 ```python 
 python GetMLPara.py
 ```
+##Dependences:
+
+[Sklearn](http://scikit-learn.org/stable/)
+
+[NetworkX](https://networkx.github.io/)
+
+[Androguard](https://github.com/androguard) 
+
+[Androwarn](https://github.com/maaaaz/androwarn)
