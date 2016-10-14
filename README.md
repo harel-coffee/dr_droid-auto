@@ -1,4 +1,4 @@
-# A Static Android Malware Analyzing Tool with Graph Analysis and Machine Learning - 0.1
+# A Static Android Malware Analyzing Tool with Graph Analysis and Machine Learning
 
 ## Description
 The tool builds a dependence graph of an app and partitions it into different regions based on the graph connection.
@@ -63,3 +63,4 @@ python GetMLPara.py
 
 
 ## Discussions
+## version 0.1
