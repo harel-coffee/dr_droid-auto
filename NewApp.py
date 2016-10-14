@@ -159,7 +159,7 @@ class newStart:
              #not split
              t = []
              for i in nodelist:
-                 t = t + i
+                 t = list(t) + list(i)
              self.new_nodelist = t
              self.subgraph_num = 1     
           else:
