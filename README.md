@@ -17,7 +17,7 @@ Features information of the apk:print the feature information of the app
 
 Train and Predict the apk: train based on existing dataset and predict a new apk.
 ```python
- python FeatureInfo.py ApKPath
+ python TrainAndPredict ApKPath
 ```
 Statistics of the apk files:
 ```python
