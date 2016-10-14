@@ -22,9 +22,20 @@ optional arguments:
                         on ROC and precision-recall curves.
   -p PREDICT, --predict PREDICT
                         predict a new apk
-
 ```
 
+
+### Example command line;
+
+use region analysis:
+```python
+ python main.py -w -a -f -p apks/Geinimi--2e998614b17adbafeb55b5fb9820f63aec5ce8b4.apk 
+```
+
+use whole program anlysis:
+```python
+ python main.py +w -a -f -p apks/Geinimi--2e998614b17adbafeb55b5fb9820f63aec5ce8b4.apk 
+```
 ## Extra functions:
 
 Statistics of the apk files:
