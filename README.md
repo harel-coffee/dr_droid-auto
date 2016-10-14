@@ -8,20 +8,22 @@ Each region is independently classified via machine learning algorithms. The too
 ## How to run
 Code information of the apk: print the code structure of the app, generate dot graphs for analyzing. 
 ```python
- usage: main.py [-h] [-w] [+w] [-a] [-f] [-m] [-p PREDICT]
+python main.py -h
+usage: main.py [-h] [-w] [+w] [-a] [-f] [-m] [-p PREDICT]
 
 running analysis...
 
 optional arguments:
   -h, --help            show this help message and exit
-  -w                    Turn whole-program-analysis off, use regions
-  +w                    Turn whole-program-analysis on
+  -w                    Turn whole-program-analysis off, use regions for
+                        classification
+  +w                    Turn whole-program-analysis on, ignore code structure
   -a, --apkinfo         get Application information
   -f, --feainfo         get Feature information
   -m, --mlparameters    show how we choose a machine learning algorithm based
                         on ROC and precision-recall curves.
   -p PREDICT, --predict PREDICT
-                        predict a new apk
+                        predict a tested apk: 1-malicious 0-benign
 ```
 
 
