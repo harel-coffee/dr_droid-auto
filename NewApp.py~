@@ -151,8 +151,8 @@ class newStart:
           UG1 = self._Callinout.fcgnx_class_level.to_undirected(reciprocal=False) 
           nodelist = list(nx.connected_components(UG1))
           
-          #for i in nodelist:
-          #    print i
+          for i in nodelist:
+              print i
           threshold = 5 #from 5 to 10
           del UG1    
           max_nodes = max([len(i) for i in nodelist])
