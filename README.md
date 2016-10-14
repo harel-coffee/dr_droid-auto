@@ -19,6 +19,9 @@ Train and Predict the apk: train based on existing dataset and predict a new apk
 ```python
  python TrainAndPredict ApKPath
 ```
+
+## Extra functions:
+
 Statistics of the apk files:
 ```python
 python Dir_With_APKs
