@@ -6,6 +6,7 @@
 from FeatureInfo import runFeatureInfo
 from AppInfo import runApkInfo
 from TrainAndPredict import runTrainAndPredict
+from GetMLPara import runML
 import Global
 import argparse
 import sys
@@ -43,10 +44,21 @@ if __name__ == "__main__":
    else:
        Global.WHOLE_PROGRAM_ANALYSIS = False
 
+
+   if args.mlparameters:
+       runML()
+
+
    input_file = args.predict
+
+   if input_file == None:
+       print ("No apk input, system exit")
+       sys.exit(0)
+
    if args.apkinfo:
         runApkInfo(input_file)
    if args.feainfo:
         runFeatureInfo(input_file)
+
 
    runTrainAndPredict(input_file)

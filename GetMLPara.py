@@ -789,6 +789,14 @@ def read_data_onesubgraph():
     del X1,X2,X3,y1,y2,y3,y11,y22,y33
     return X,y
 
+
+def runML():
+    X, y =read_data_onesubgraph()
+    feature_importances(X,y)
+    #my_get_fp_fn_CV(X,y)
+    final_train_and_test_after_preparation(X,y)
+    precision_recall_curve_draw(X,y)
+
 if __name__ == "__main__":
 
    X, y =read_data_onesubgraph()
