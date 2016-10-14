@@ -32,7 +32,7 @@ from GetMethods import *
 from apk import *
 from analysis import *
 from dvm import *
-
+import Global
 
 from Callinout import *
 
@@ -131,8 +131,6 @@ class newStart:
           self.classlist = self.CL.get_classlist()
           self.classlist.sort()
 
-
-
       
       def Tab_CallInOut(self):
           """
@@ -157,13 +155,13 @@ class newStart:
           del UG1    
           max_nodes = max([len(i) for i in nodelist])
           
-          if max_nodes < threshold :
+          if max_nodes < threshold or Global.WHOLE_PROGRAM_ANALYSIS:
              #not split
              t = []
              for i in nodelist:
                  t = t + i
-                 self.new_nodelist = t
-                 self.subgraph_num = 1     
+             self.new_nodelist = t
+             self.subgraph_num = 1     
           else:
              self.new_nodelist = [ i for i in nodelist if len(i) >= threshold ]
              self.subgraph_num = len(self.new_nodelist) 

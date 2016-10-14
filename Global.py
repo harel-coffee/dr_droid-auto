@@ -19,3 +19,4 @@ global APK_classlist
 global APK_callclasslist
 global APK_sen_calls
 global APK_methodinvokelist
+global WHOLE_PROGRAM_ANALYSIS

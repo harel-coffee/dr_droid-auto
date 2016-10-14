@@ -370,7 +370,19 @@ def features_representation_difference(X_original,y,f):
        print ("TASK: {}".format(tasks))
        print ("FILES: {}".format(files))
        print ("------------")
-         
+
+def runFeatureInfo(apk):   
+   try:
+        input_file =  apk
+   except:
+        print("none inputfile detected, use a test input file ")
+        input_file ="apks/com.andromo.dev4168.app4242.apk"
+        #exit(0)
+   #Options.WHOLE_PROGRAM_ANALYSIS=True
+   X, y =read_data_onesubgraph()
+   features_representation_difference(X,y, input_file)     
+
+
 if __name__ == "__main__":
    
    try:
@@ -379,7 +391,7 @@ if __name__ == "__main__":
         print("none inputfile detected, use a test input file ")
         input_file ="apks/com.andromo.dev4168.app4242.apk"
         #exit(0)
-
+   #Options.WHOLE_PROGRAM_ANALYSIS=True
    X, y =read_data_onesubgraph()
    features_representation_difference(X,y, input_file)
 

@@ -171,7 +171,20 @@ def read_data_onesubgraph():
     del file1,file2,file3,file4
     del X1,X2,X3,y1,y2,y3,y11,y22,y33
     return X,y   
-  
+
+def runTrainAndPredict(apk):
+
+    X, y =read_data_onesubgraph()
+    try:
+        input_file = apk
+    except:
+        print("none inputfile detected, use a test input file ")
+        input_file ="apks/com.andromo.dev4168.app4242.apk"
+
+    run_each_app(X,y,input_file)
+
+
+
 if __name__ == "__main__":
 
    X, y =read_data_onesubgraph()

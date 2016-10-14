@@ -15,10 +15,10 @@ def analyse_CDG_MCG(CDG,MCG):
     print ("CLSS-level Node Size:    {}".format(len(subgraph_num_CDG)))
         
 #test the method graph woth permissions used 
-if __name__ == "__main__":
+def runApkInfo(apk):
     #python measurment performance 
     try:
-        input_file = sys.argv[1]
+        input_file = apk
     except:
         print("none inputfile detected, use a test input file ")
         input_file ="apks/com.andromo.dev4168.app4242.apk"
