@@ -38,6 +38,12 @@ use whole program anlysis:
 ```python
  python main.py +w -a -f -p apks/Geinimi--2e998614b17adbafeb55b5fb9820f63aec5ce8b4.apk 
 ```
+
+get ML parameters:
+```python
+ python main.py -m
+```
+
 ## Extra functions:
 
 Statistics of the apk files:
