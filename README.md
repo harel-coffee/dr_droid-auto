@@ -30,12 +30,12 @@ optional arguments:
 ## Example command lines:
 
 use region analysis:
-```python
+```bash
  python main.py -w -a -f -p apks/Geinimi--2e998614b17adbafeb55b5fb9820f63aec5ce8b4.apk 
 ```
 
 use whole program anlysis:
-```python
+```bash
  python main.py +w -a -f -p apks/Geinimi--2e998614b17adbafeb55b5fb9820f63aec5ce8b4.apk 
 ```
 
