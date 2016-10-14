@@ -128,7 +128,7 @@ from androguard.core.bytecodes.dvm_permissions import *
 
 def features_representation_difference(X_original,y,f):
    
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto', min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
     #rforest= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=True, random_state=None,
     #shrinking=True, tol=0.001, verbose=False)
 

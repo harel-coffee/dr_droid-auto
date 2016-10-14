@@ -95,17 +95,17 @@ nbb = BernoulliNB() performs best
 -1
 
 decision tree
-estimator=DecisionTreeClassifier(compute_importances=None, criterion='gini',max_depth=None, max_features=None, max_leaf_nodes=None,
-min_density=None, min_samples_leaf=1, min_samples_split=2, random_state=None, splitter='best')
+estimator=DecisionTreeClassifier( criterion='gini',max_depth=None, max_features=None, max_leaf_nodes=None,
+ min_samples_leaf=1, min_samples_split=2, random_state=None, splitter='best')
 -1
 
 random forest
-estimator=RandomForestClassifier(bootstrap=True, compute_importances=None, criterion='gini', max_depth=None, max_features='auto',
-max_leaf_nodes=None, min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=None, verbose=0
+estimator=RandomForestClassifier(bootstrap=True,  criterion='gini', max_depth=None, max_features='auto',
+max_leaf_nodes=None,  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=None, verbose=0
 +1
 
 SVM
-estimator=SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=False, random_state=None,
+estimator=SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=False, random_state=None,
 shrinking=True, tol=0.001, verbose=False)
 +1
 """
@@ -175,16 +175,16 @@ def my_get_fp_fn_CV(X_original,y):
     knn = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', n_neighbors=5, p=2, weights='uniform')
 
     #decision tree
-    dtree = DecisionTreeClassifier(compute_importances=None, criterion='gini', min_samples_leaf=4, min_samples_split=2, random_state=None, splitter='best')
+    dtree = DecisionTreeClassifier( criterion='gini', min_samples_leaf=4, min_samples_split=2, random_state=None, splitter='best')
 
     #naive
     #nbbern = BernoulliNB()
 
     #random forest
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto', min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
 
     #svm
-    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=True, random_state=None,
+    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=True, random_state=None,
 shrinking=True, tol=0.001, verbose=False)
 
     #reduce the size
@@ -262,13 +262,13 @@ def train_and_test(X,y):
     nbbern = BernoulliNB()
 
     #decision tree
-    dtree = DecisionTreeClassifier(compute_importances=None, criterion='gini', min_samples_leaf=4, min_samples_split=2, random_state=None, splitter='best')
+    dtree = DecisionTreeClassifier( criterion='gini', min_samples_leaf=4, min_samples_split=2, random_state=None, splitter='best')
 
     #random forest
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto', min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
 
     #svm
-    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=False, random_state=None,
+    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=False, random_state=None,
 shrinking=True, tol=0.001, verbose=False)
 
 
@@ -289,7 +289,7 @@ def get_fpr_tpr(clt, X, y):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25 , random_state = 0)
 
     #from sklearn import tree
-    #clt = tree.DecisionTreeClassifier(compute_importances=None, criterion='entropy', min_samples_leaf=2, min_samples_split=2, random_state=None, splitter='best')
+    #clt = tree.DecisionTreeClassifier( criterion='entropy', min_samples_leaf=2, min_samples_split=2, random_state=None, splitter='best')
     clt = clt.fit(X_train,y_train)
     #from sklearn.externals.six import StringIO
     #with open("iris_plus.dot", 'w') as f:
@@ -345,13 +345,13 @@ def final_train_and_test_after_preparation(X_original,y):
     knn = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', n_neighbors=5, p=2, weights='uniform')
 
     #decision tree
-    dtree = DecisionTreeClassifier(compute_importances=None, criterion='entropy', min_samples_leaf=4, min_samples_split=2, random_state=None, splitter='best')
+    dtree = DecisionTreeClassifier( criterion='entropy', min_samples_leaf=4, min_samples_split=2, random_state=None, splitter='best')
 
     #random forest
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',   min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
 
     #svm
-    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=True, random_state=None,
+    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=True, random_state=None,
 shrinking=True, tol=0.001, verbose=False)
 
     #naive bayes
@@ -401,13 +401,13 @@ def precision_recall_curve_draw(X_o,y):
     print (X.shape)
     print (y.shape)
 
-    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=True, random_state=None,
+    svmrbf= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=True, random_state=None,
 shrinking=True, tol=0.001, verbose=False)
     knn = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', n_neighbors=5, p=2, weights='uniform')
 
-    dtree = DecisionTreeClassifier(compute_importances=None, criterion='gini', min_samples_leaf=1, min_samples_split=2, random_state=None, splitter='best')
+    dtree = DecisionTreeClassifier( criterion='gini', min_samples_leaf=1, min_samples_split=2, random_state=None, splitter='best')
 
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto', min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
 
     p_svmrbf, r_svmrbf, auc_svmrbf = get_my_pecision_recall(svmrbf,X,y)
 
@@ -440,8 +440,8 @@ from androguard.core.bytecodes.dvm_permissions import *
 
 def features_representation_difference(X_original,y,f):
 
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto', min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
-    #rforest= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=True, random_state=None,
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    #rforest= svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=True, random_state=None,
     #shrinking=True, tol=0.001, verbose=False)
 
     skb = SelectKBest(f_classif, k=80).fit(X_original,y)
@@ -620,12 +620,12 @@ def predict_mulitple_subgraphs(X_original,y):
 
     time_start = time.time()
     #X = SelectKBest(f_classif, k=80).fit_transform(X_original,y)
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
-    #rforest = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0, kernel='rbf', max_iter=-1, probability=True, random_state=None, shrinking=True, tol=0.001, verbose=False)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',   min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    #rforest = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,  kernel='rbf', max_iter=-1, probability=True, random_state=None, shrinking=True, tol=0.001, verbose=False)
 
     #rforest = KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', n_neighbors=5, p=2, weights='uniform')
 
-    #rforest = DecisionTreeClassifier(compute_importances=None, criterion='gini', min_samples_leaf=1, min_samples_split=2, random_state=None, splitter='best')
+    #rforest = DecisionTreeClassifier( criterion='gini', min_samples_leaf=1, min_samples_split=2, random_state=None, splitter='best')
 
     skb = SelectKBest(f_classif, k=80).fit(X_original,y)
     X = skb.fit_transform(X_original,y)

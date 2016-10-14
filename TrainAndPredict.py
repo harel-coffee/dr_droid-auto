@@ -48,7 +48,7 @@ def _dataset_sample():
 
 ###################################### SHELL TO RUN EACH APP ###############
 def run_each_app(X_original,y,f):
-    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto', min_density=None, min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
+    rforest = RandomForestClassifier(bootstrap=True, criterion='gini', max_depth=None, max_features='auto',  min_samples_leaf=1, min_samples_split=2, n_estimators=10, n_jobs=1, oob_score=False, random_state=3)
    
     skb = SelectKBest(f_classif, k=80).fit(X_original,y)
     X = skb.fit_transform(X_original,y)
