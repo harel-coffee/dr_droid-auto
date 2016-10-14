@@ -8,16 +8,21 @@ Each region is independently classified via machine learning algorithms. The too
 ## How to run
 Code information of the apk: print the code structure of the app, generate dot graphs for analyzing. 
 ```python
- python AppInfo.py ApkPath
-```
-Features information of the apk:print the feature information of the app
-```python
- python FeatureInfo.py ApkPath
-```
+ usage: main.py [-h] [-w] [+w] [-a] [-f] [-m] [-p PREDICT]
 
-Train and Predict the apk: train based on existing dataset and predict a new apk.
-```python
- python TrainAndPredict ApKPath
+running analysis...
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -w                    Turn whole-program-analysis off, use regions
+  +w                    Turn whole-program-analysis on
+  -a, --apkinfo         get Application information
+  -f, --feainfo         get Feature information
+  -m, --mlparameters    show how we choose a machine learning algorithm based
+                        on ROC and precision-recall curves.
+  -p PREDICT, --predict PREDICT
+                        predict a new apk
+
 ```
 
 ## Extra functions:
