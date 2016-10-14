@@ -7,7 +7,7 @@ Each region is independently classified via machine learning algorithms. The too
 
 ## How to run
 Code information of the apk: print the code structure of the app, generate dot graphs for analyzing. 
-```python
+```bash
 python main.py -h
 usage: main.py [-h] [-w] [+w] [-a] [-f] [-m] [-p PREDICT]
 
