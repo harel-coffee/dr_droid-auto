@@ -27,7 +27,7 @@ optional arguments:
 ```
 
 
-### Example command line;
+## Example command lines:
 
 use region analysis:
 ```python
