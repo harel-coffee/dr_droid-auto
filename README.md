@@ -52,7 +52,7 @@ Statistics of the apk files:
 ```python
 python Dir_With_APKs
 ```
-#TODO implement more features 
+TODO implement more features 
 
 ## Dependences:
 
