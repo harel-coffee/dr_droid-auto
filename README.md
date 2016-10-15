@@ -6,7 +6,6 @@ Each region is independently classified via machine learning algorithms. The too
 
 
 ## How to run
-Code information of the apk: print the code structure of the app, generate dot graphs for analyzing. 
 ```bash
 python main.py -h
 usage: main.py [-h] [-w] [+w] [-a] [-f] [-m] [-p PREDICT]
@@ -48,11 +47,10 @@ get ML parameters:
 
 ## Extra functions:
 
-Statistics of the apk files:
+Statistics of the apk files: (TODO implement more features )
 ```python
 python Dir_With_APKs
 ```
-TODO implement more features 
 
 ## Dependences:
 
