@@ -52,10 +52,7 @@ Statistics of the apk files:
 ```python
 python Dir_With_APKs
 ```
-Machine Learning info: show how we choose a machine learning algorithm based on ROC and precision-recall curves.
-```python 
-python GetMLPara.py
-```
+#TODO implement more features 
 
 ## Dependences:
 
