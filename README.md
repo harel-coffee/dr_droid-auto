@@ -23,7 +23,9 @@ optional arguments:
   -m, --mlparameters    show how we choose a machine learning algorithm based
                         on ROC and precision-recall curves.
   -p PREDICT, --predict PREDICT
-                        predict a tested apk: 1-malicious 0-benign
+                        predict a tested apk: 1-malicious 0-benign [0-1]:
+                        malicious score
+
 ```
 
 
