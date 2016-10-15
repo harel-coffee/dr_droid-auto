@@ -25,7 +25,7 @@ def parse_options():
     parser.add_argument('-m', '--mlparameters', action='store_true',default=False,
                         help='show how we choose a machine learning algorithm based on ROC and precision-recall curves.' )
 
-    parser.add_argument('-p', '--predict', type=str, help='predict a tested  apk: 1-malicious 0-benign' )
+    parser.add_argument('-p', '--predict', type=str, help='predict a tested  apk: 1-malicious 0-benign [0-1]: malicious score' )
     args = parser.parse_args()
 
     return args

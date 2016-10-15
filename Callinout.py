@@ -112,7 +112,16 @@ class YY_CallInOut:
         del classlist
         #write
         #dgraph_class.write("YY_class.dot")
-        self.fcgnx_class_level = nx.DiGraph(nx.from_pydot(dgraph_class))
+        #self.fcgnx_class_level = nx.DiGraph(nx.from_pydot(dgraph_class))
+        try:
+            self.fcgnx_class_level = nx.DiGraph(nx.from_pydot(dgraph_class))
+            print ("Done with networkX class-graph")
+        except ImportError:
+            print ("you networkx may not be 1.9.*, try another import for networkx 1.11.*")
+            self.fcgnx_class_level = nx.nx_pydot.from_pydot(dgraph_class)
+
+        #print ("failed, some import issues on the networkX")
+        #sys.exit(1)
         del dgraph_class
         #print "class graph succeed"
         #print ("class level nodes: {0}, edges:{1}".format(self.fcgnx_class_level.__len__(),self.fcgnx_class_level.size()))
