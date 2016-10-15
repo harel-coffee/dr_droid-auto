@@ -45,7 +45,7 @@ get ML parameters:
  python main.py -m
 ```
 
-## Extra functions:
+## Extra functions (TODO):
 
 Statistics of the apk files: (TODO implement more features )
 ```python
@@ -74,4 +74,4 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 ## Discussions
-## version 0.1
+## version 0.1.1
