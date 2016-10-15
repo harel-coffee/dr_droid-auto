@@ -63,6 +63,20 @@ python GetMLPara.py
 [Androguard](https://github.com/androguard), [Androwarn](https://github.com/maaaaz/androwarn),
 [MatplotLib](http://matplotlib.org/)
 
+```bash
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pkg_resources
+>>> pkg_resources.get_distribution("networkx").version
+'1.9.1'
+>>> >>> import sklearn
+>>> sklearn.__version__
+'0.14.1'
+>>> import numpy
+>>> numpy.__version__
+'1.8.2'
+```
 
 ## Discussions
 ## version 0.1
