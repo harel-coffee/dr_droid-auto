@@ -34,8 +34,12 @@ def runApkInfo(apk):
     print ("Size Subgraphs: {}".format(new_app.subgraph_num))
 
     #print Graphs
-    nx.write_dot(new_app._Callinout.fcgnx, 'FCGNX_method.dot') 
-    nx.write_dot(new_app._Callinout.fcgnx_class_level, 'FCGNX_class.dot') 
+    try:
+        nx.write_dot(new_app._Callinout.fcgnx, 'FCGNX_method.dot')
+        nx.write_dot(new_app._Callinout.fcgnx_class_level, 'FCGNX_class.dot')
+    except AttributeError,ImportError:
+        nx.drawing.nx_pydot.write_dot(new_app._Callinout.fcgnx, 'FCGNX_method.dot')
+        nx.drawing.nx_pydot.write_dot(new_app._Callinout.fcgnx_class_level, 'FCGNX_class.dot')
 
     print ("OUtput Graph as FCGNX_method.dot and FCGNX_class.dot")
 

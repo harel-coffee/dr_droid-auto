@@ -116,7 +116,7 @@ class YY_CallInOut:
         try:
             self.fcgnx_class_level = nx.DiGraph(nx.from_pydot(dgraph_class))
             print ("Done with networkX class-graph")
-        except ImportError:
+        except AttributeError,ImportError:
             print ("you networkx may not be 1.9.*, try another import for networkx 1.11.*")
             self.fcgnx_class_level = nx.nx_pydot.from_pydot(dgraph_class)
 
