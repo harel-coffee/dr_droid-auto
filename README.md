@@ -73,5 +73,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 '1.8.2'
 ```
 
-## Discussions
+
 ## version 0.1.1
+
+if you like this tool, citing the paper "Analysis of Code Heterogeneity for High-Precision Classification of Repackaged Malware."  Tian, K., Yao, D.D., Ryder, B.G. and Tan, G. In Proceedings of Mobile Security Technologies (MoST), in conjunction with the IEEE Symposium on Security and Privacy. San Jose, CA. May 2016.  is highly appreciated.
