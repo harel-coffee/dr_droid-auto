@@ -73,6 +73,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 '1.8.2'
 ```
 
+## Disclaim
+
+A rsearch prototype for Android malware detection with Code-Heterogeneity Features.
 
 ## version 0.1.1
 
