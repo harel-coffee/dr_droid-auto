@@ -77,6 +77,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 A rsearch prototype for Android malware detection with code-Heterogeneity features. 
 
-## version 0.1.1
+## version 0.0.1
 
 If you like this tool, citing the paper "K. Tian, D. D. Yao, B. G. Ryder, G. Tan and G. Peng, "Detection of Repackaged Android Malware with Code-Heterogeneity Features," in IEEE Transactions on Dependable and Secure Computing, 2017" is highly appreciated.
