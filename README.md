@@ -75,7 +75,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## Disclaim
 
-A rsearch prototype for Android malware detection with Code-Heterogeneity Features.
+A rsearch prototype for Android malware detection with code-Heterogeneity features. 
 
 ## version 0.1.1
 
